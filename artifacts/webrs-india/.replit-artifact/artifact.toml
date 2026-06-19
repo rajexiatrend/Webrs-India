@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "WebRS India"
+version = "1.0.0"
+id = "artifacts/webrs-india"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24345
+
+[services.development]
+run = "pnpm --filter @workspace/webrs-india run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/webrs-india", "run", "build" ]
+publicDir = "artifacts/webrs-india/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24345"
+BASE_PATH = "/"
