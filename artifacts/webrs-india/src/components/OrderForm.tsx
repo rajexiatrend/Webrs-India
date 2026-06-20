@@ -5,9 +5,9 @@ import { useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
 
-// Google Apps Script URL for future Google Sheets integration
-// Replace with your deployed script URL to enable spreadsheet logging
-const GOOGLE_SCRIPT_URL = "";
+// Google Apps Script URL for Google Sheets integration
+// Deployed Apps Script web app — receives form submissions as JSON and logs to a Google Sheet
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw9RyZftmpA8O3RNB4i4uM0KFCWd2EGHE6yR1rXj0ZcvgACn9BOdEW954t8tpa3yi4duQ/exec";
 
 const businessTypes = [
   "Salon", "Gym/Fitness", "Cafe", "Restaurant", "Doctor/Clinic",
@@ -70,8 +70,18 @@ export default function OrderForm() {
       try {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
+          mode: "no-cors",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...form, submittedAt: new Date().toISOString() }),
+          body: JSON.stringify({
+            name: form.fullName,
+            businessName: form.businessName,
+            businessType: form.businessType,
+            pages: form.pages,
+            phone: form.phone,
+            city: form.city,
+            message: form.message,
+            submittedAt: new Date().toISOString(),
+          }),
         });
       } catch {
         // Silently ignore — WhatsApp redirect already happened

@@ -75,7 +75,12 @@ const plans = [
   },
 ];
 
-const WA_LINK = "https://wa.me/918800788654?text=Hi%2C%20I%20want%20to%20get%20started%20with%20WebRS%20India";
+const WA_LINKS = [
+  "https://wa.me/918800788654?text=Hi%2C%20I%20am%20interested%20in%20the%20MONTHLY%20GROWTH%20PLAN%20(%E2%82%B9699%2Fmonth).%20Please%20share%20more%20details.%20My%20Name%3A%20%0ABusiness%20Name%3A%20%0ABusiness%20Type%3A%20%0ACity%3A%20",
+  "https://wa.me/918800788654?text=Hi%2C%20I%20am%20interested%20in%20the%20QUARTERLY%20BOOST%20PLAN%20(%E2%82%B91%2C999%2Fquarter).%20Please%20share%20more%20details.%20My%20Name%3A%20%0ABusiness%20Name%3A%20%0ABusiness%20Type%3A%20%0ACity%3A%20",
+  "https://wa.me/918800788654?text=Hi%2C%20I%20am%20interested%20in%20the%20HALF%20YEARLY%20PRO%20PLAN%20(%E2%82%B93%2C999%2F6%20months).%20Please%20share%20more%20details.%20My%20Name%3A%20%0ABusiness%20Name%3A%20%0ABusiness%20Type%3A%20%0ACity%3A%20",
+  "https://wa.me/918800788654?text=Hi%2C%20I%20am%20interested%20in%20the%20ANNUAL%20CHAMPION%20PLAN%20(%E2%82%B97%2C499%2Fyear).%20Please%20share%20more%20details.%20My%20Name%3A%20%0ABusiness%20Name%3A%20%0ABusiness%20Type%3A%20%0ACity%3A%20",
+];
 
 export default function Pricing() {
   const ref = useRef(null);
@@ -152,7 +157,7 @@ export default function Pricing() {
               </ul>
 
               <a
-                href={WA_LINK}
+                href={WA_LINKS[i]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-full text-center py-3 rounded-xl font-bold text-sm transition-all duration-200 hover:scale-[1.02] ${

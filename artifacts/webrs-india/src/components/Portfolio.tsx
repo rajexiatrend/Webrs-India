@@ -6,24 +6,27 @@ import { ExternalLink } from "lucide-react";
 const projects = [
   {
     name: "Glow Unisex Salon, Delhi",
-    url: "glowsalon.in",
+    url: "luxury-web-design.replit.app",
     tags: ["Salon", "WhatsApp Booking", "Gallery"],
     gradient: "from-pink-600/40 via-purple-700/30 to-indigo-800/40",
     accent: "#e879f9",
+    demo: "https://replit.com/@rzworld011/Luxury-Web-Design",
   },
   {
     name: "KD Fitness Gym, Delhi",
-    url: "kdfitness.in",
+    url: "fitness-gold-design.replit.app",
     tags: ["Gym", "Membership Plans", "Trainers"],
     gradient: "from-orange-600/40 via-red-700/30 to-rose-800/40",
     accent: "#f97316",
+    demo: "https://replit.com/@rzworld011/Fitness-Gold-Design",
   },
   {
-    name: "The Brew Corner Cafe, Noida",
-    url: "brewcorner.in",
-    tags: ["Cafe", "Menu", "Online Ordering"],
-    gradient: "from-amber-600/40 via-yellow-700/30 to-green-800/30",
-    accent: "#fbbf24",
+    name: "SaaS Craft India",
+    url: "saas-craft-india.replit.app",
+    tags: ["SaaS", "Modern Design", "Business"],
+    gradient: "from-sky-600/40 via-blue-700/30 to-violet-800/40",
+    accent: "#38bdf8",
+    demo: "https://replit.com/@rzworld011/SaaS-Craft-India",
   },
 ];
 
@@ -102,7 +105,9 @@ export default function Portfolio() {
                   ))}
                 </div>
                 <a
-                  href="#"
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
                   data-testid={`portfolio-demo-${i}`}
                 >
