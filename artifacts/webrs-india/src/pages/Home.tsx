@@ -4,6 +4,7 @@ import Problems from "@/components/Problems";
 import Pricing from "@/components/Pricing";
 import Features from "@/components/Features";
 import Portfolio from "@/components/Portfolio";
+import Owner from "@/components/Owner";
 import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 import OrderForm from "@/components/OrderForm";
@@ -22,6 +23,7 @@ export default function Home() {
         <HowItWorks />
         <Features />
         <Portfolio />
+        <Owner />
         <Pricing />
         <Reviews />
         <OrderForm />
